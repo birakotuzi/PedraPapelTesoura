@@ -1,18 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Quantos jogadores?" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RadioGroup
+        android:id="@+id/opcaoRg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/doisRb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Dois"/>
+
+        <RadioButton
+            android:id="@+id/tresRb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Três"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecione uma jogada" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/pedraBt"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/pedra"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="Pedra"
+            android:onClick="onClick"
+            />
+
+        <ImageButton
+            android:id="@+id/tesouraBt"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/tesoura"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="Tesoura"
+            />
+
+        <ImageButton
+            android:id="@+id/papelBt"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/papel"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="Papel"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jogada Computador" />
+
+    <ImageView
+        android:id="@+id/jogadaComputadorIv"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/selecionarOpcaoLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <ImageView
+            android:id="@+id/jogadaComputadorIv1"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resultado" />
+    <TextView
+        android:id="@+id/resultadoTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
